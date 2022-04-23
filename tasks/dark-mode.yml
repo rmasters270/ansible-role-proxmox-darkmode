@@ -1,0 +1,13 @@
+---
+- name: Download Dark Mode Script
+  ansible.builtin.get_url:
+    url: '{{ pve_dark_mode_url }}'
+    dest: '{{ pve_dark_mode_script_path }}'
+    mode: 0644
+
+- name: Install Dark Mode
+  ansible.builtin.command:
+    cmd: bash '{{ pve_dark_mode_script_path }}' install
+  register: _pve_dark_mode_result
+  changed_when: _pve_dark_mode_result.rc == 0
+  failed_when: _pve_dark_mode_result.rc not in [ 0, 2 ]

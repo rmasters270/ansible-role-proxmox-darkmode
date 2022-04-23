@@ -1,0 +1,13 @@
+---
+- name: Check for Dark Mode Script
+  ansible.builtin.stat:
+    path: '{{ pve_dark_mode_script_path }}'
+  register: _pve_dark_mode_script
+
+- name: Install Light Mode
+  ansible.builtin.command:
+    cmd: bash '{{ pve_dark_mode_script_path }}' uninstall
+  register: _pve_dark_mode_result
+  changed_when: _pve_dark_mode_result.rc == 0
+  failed_when: _pve_dark_mode_result.rc not in [ 0, 2 ]
+  when: _pve_dark_mode_script.stat.exists

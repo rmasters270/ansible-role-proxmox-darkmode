@@ -1,0 +1,6 @@
+---
+- ansible.builtin.import_tasks: dark-mode.yml
+  when: pve_dark_mode_enabled | bool
+
+- ansible.builtin.import_tasks: light-mode.yml
+  when: not pve_dark_mode_enabled | bool

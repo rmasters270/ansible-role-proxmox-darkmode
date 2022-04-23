@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Ryan Masters
+  namespace: rmasters270
+  role_name: proxmox_darkmode
+  description: Enable dark mode in Proxmox VE using a script from Weilbyte.
+  company: none
+  license: MIT
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+        - bullseye
+
+  galaxy_tags: [proxmox, pve, darkmode]
+
+dependencies: []
