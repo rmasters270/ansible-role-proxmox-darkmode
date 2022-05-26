@@ -1,5 +1,6 @@
 galaxy_info:
   author: rmasters270
+  role_name: proxmox_darkmode
   description: Enable dark mode in Proxmox VE using a script from Weilbyte.
   company: none
   license: MIT
