@@ -4,11 +4,9 @@ Enable dark mode in Proxmox for all users.
 
 ## Role Variables
 
-### pve_dark_mode_enabled
-
-Enable or dark mode or restore the default light theme.
-
-default: `false`
+| Variable                | Required | Default | Choices     | Comments                                                 |
+|-------------------------|----------|---------|-------------|----------------------------------------------------------|
+| pve_dark_mode_enabled   | yes      | false   | true, false | Enable dark mode or restore the default theme.           |
 
 ## Dependencies
 
